@@ -23,7 +23,8 @@ frontend:
   artifacts:
     files:
       # - '**/*'
-      - 'index.html'
+      # - 'index.html'
+      - '404.html'
     baseDirectory: public
   cache:
     paths: []
