@@ -22,9 +22,7 @@ frontend:
         - du -h -d 1 public
   artifacts:
     files:
-      # - '**/*'
-      # - 'index.html'
-      - '404.html'
-    baseDirectory: public
+      - '**/*'
+    baseDirectory: /
   cache:
     paths: []
