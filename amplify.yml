@@ -3,7 +3,6 @@ frontend:
   phases:
     preBuild:
       commands:
-        - echo Building docs with Hugo
         - echo Installing Hugo ...
         - wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_extended_0.55.6_Linux-64bit.tar.gz
         - tar -xf hugo_extended_0.55.6_Linux-64bit.tar.gz hugo
@@ -12,13 +11,14 @@ frontend:
         - echo Successfully installed Hugo
     build:
       commands:
+        - echo Building docs with Hugo
+        - echo Now move static images and files ...
+        - aws s3 sync static s3://dev.docs.cumulusnetworks.com
+        - echo clean static
+        - rm -rf static
         - echo Building docs ...
         - hugo --baseURL $BASEURL
         - echo Successfully built docs
-        - echo Now move static images and files ...
-        - echo ...
-        - aws sts get-caller-identity
-        - aws s3 ls
   artifacts:
     files:
         - '**/*'
