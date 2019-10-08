@@ -17,6 +17,7 @@ frontend:
         - echo Successfully built docs
         - echo Now move static images and files ...
         - echo ...
+        - aws sts get-caller-identity
         - aws s3 ls
   artifacts:
     files:
