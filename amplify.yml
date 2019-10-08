@@ -22,8 +22,8 @@ frontend:
         - du -h -d 1 public
   artifacts:
     files:
-        - '**/*'
+      - '**/*'
     baseDirectory: public
+    discard-paths: yes
   cache:
-    paths:
-      - public/**/*
+    paths: []
