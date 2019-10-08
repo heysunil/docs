@@ -12,7 +12,6 @@ frontend:
     build:
       commands:
         - echo Building docs with Hugo
-        - aws sts get-caller-identity
         - echo Now move static images and files ...
         - aws s3 sync static s3://dev.docs.cumulusnetworks.com --delete
         - echo Remove static directory
@@ -20,6 +19,7 @@ frontend:
         - echo Building docs ...
         - hugo --baseURL $BASEURL
         - echo Successfully built docs
+        - du -h -d 1 public
   artifacts:
     files:
         - '**/*'
