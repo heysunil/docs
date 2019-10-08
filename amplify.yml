@@ -14,7 +14,7 @@ frontend:
         - echo Building docs with Hugo
         - echo Now move static images and files ...
         - aws s3 sync static s3://dev.docs.cumulusnetworks.com
-        - echo clean static
+        - echo Remove static directory
         - rm -rf static
         - echo Building docs ...
         - hugo --baseURL $BASEURL
