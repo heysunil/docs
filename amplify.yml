@@ -22,7 +22,7 @@ frontend:
         - echo Replacing static file domain with $STATIC_DOMAIN
         - find public -name '*.html' -exec sed -i "" "s|s3-us-west-2.amazonaws.com/dev.docs.cumulusnetworks.com|$STATIC_DOMAIN|g" {} \;
         - find public -name '*.xml' -exec sed -i "" "s|s3-us-west-2.amazonaws.com/dev.docs.cumulusnetworks.com|$STATIC_DOMAIN|g" {} \;
-        - echo Checking disk space used
+        - echo Checking public directory size
         - du -h -d 1 public
   artifacts:
     files:
