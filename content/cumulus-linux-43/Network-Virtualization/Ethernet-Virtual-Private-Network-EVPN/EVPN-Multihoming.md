@@ -126,7 +126,7 @@ When EVPN-MH is enabled, all SVI MAC addresses are advertised as type 2 routes. 
 
 ### Enable EVPN-MH in switchd
 
-To enable EVPN-MH in `switchd`, set the `evpn.multihoming.enable` variable in `switchd.conf` to _TRUE_, then restart the `switchd` service. The variable is disabled by default.
+To enable EVPN-MH in `switchd`, set the `evpn.multihoming.enable` variable (by uncommenting it) in `switchd.conf` to _TRUE_, then restart the `switchd` service. The variable is disabled by default. This is applicable only on Spectrum A1 switches. 
 
 ```
 cumulus@switch:~$ sudo nano /etc/cumulus/switchd.conf
